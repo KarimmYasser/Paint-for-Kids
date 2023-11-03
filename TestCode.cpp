@@ -1,6 +1,7 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
 //tst
+//test2
 //This is a test code to test the Input and Output classes
 
 int main()
