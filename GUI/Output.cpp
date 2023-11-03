@@ -81,10 +81,10 @@ void Output::CreateDrawToolBar() const
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
-	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
-	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
+	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
