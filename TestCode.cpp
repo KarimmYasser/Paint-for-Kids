@@ -179,7 +179,27 @@ int main()
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;
- 
+		
+		case SAVE:
+			pOut->PrintMessage("Action: Save Graph, Click anywhere");
+			break;
+		
+		case LOAD:
+			pOut->PrintMessage("Action: Load Graph, Click anywhere");
+			break;
+
+		case MOVE:
+			pOut->PrintMessage("Action: Move Figure, Click anywhere");
+			break;
+
+		case CLEAR:
+			pOut->PrintMessage("Action: Clear All, Click anywhere");
+			break;
+
+		case DELET:
+			pOut->PrintMessage("Action: Delete Figure, Click anywhere");
+			break;
+
 		case DRAWING_AREA:
 				pOut->PrintMessage("Action: a click on the Drawing Area, Click anywhere");
 				break;
