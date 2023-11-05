@@ -139,7 +139,7 @@ int main()
 
 	gfxInfo.BorderWdth = 6;
 	gfxInfo.DrawClr = BLUE;	//any color for border
-	gfxInfo.FillClr = GREEN;//any color for filling
+	gfxInfo.FillClr = RED;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawTr(P1, P2, P2, gfxInfo, false);
 
@@ -183,7 +183,7 @@ int main()
 
 	gfxInfo.BorderWdth = 6;
 	gfxInfo.DrawClr = BLUE;	//any color for border
-	gfxInfo.FillClr = GREEN;//any color for filling
+	gfxInfo.FillClr = ORANGE;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawHex(P1, gfxInfo, false);
 
@@ -207,7 +207,7 @@ int main()
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	///TODO: Add code to draw Circle in all possible states
 
-	// 2.4.1 - Drawing non-filled Circle
+	// 2.5.1 - Drawing non-filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> non-filled,  Click two points");
 	pIn->GetPointClicked(P1.x, P1.y);
 	pIn->GetPointClicked(P2.x, P2.y);
@@ -217,25 +217,25 @@ int main()
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawCirc(P1,P2, gfxInfo, false);
 
-	// 2.4.2 - Drawing highlighted non-filled Circle
+	// 2.5.2 - Drawing highlighted non-filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawCirc(P1, P2, gfxInfo, true);
 
 
-	// 2.4.3 - Drawing a filled Circle
+	// 2.5.3 - Drawing a filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> filled,  Click two points");
 	pIn->GetPointClicked(P1.x, P1.y);
 	pIn->GetPointClicked(P2.x, P2.y);
 
 	gfxInfo.BorderWdth = 6;
 	gfxInfo.DrawClr = BLUE;	//any color for border
-	gfxInfo.FillClr = GREEN;//any color for filling
+	gfxInfo.FillClr = GOLD;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawCirc(P1, P2, gfxInfo, false);
 
 
-	// 2.4.4 - Drawing a highlighted filled Circle
+	// 2.5.4 - Drawing a highlighted filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawCirc(P1, P2, gfxInfo, true);
