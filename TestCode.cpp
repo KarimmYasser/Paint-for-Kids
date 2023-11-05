@@ -128,7 +128,7 @@ int main()
 	// 2.3.2 - Drawing highlighted non-filled Triangle
 	pOut->PrintMessage("Drawing a Triangle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawTr(P1, P2, P2, gfxInfo, true);
+	pOut->DrawTr(P1, P2, P3 ,gfxInfo, true);
 
 
 	// 2.3.3 - Drawing a filled Triangle
@@ -141,13 +141,13 @@ int main()
 	gfxInfo.DrawClr = BLUE;	//any color for border
 	gfxInfo.FillClr = RED;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
-	pOut->DrawTr(P1, P2, P2, gfxInfo, false);
+	pOut->DrawTr(P1, P2, P3, gfxInfo, false);
 
 
 	// 2.3.4 - Drawing a highlighted filled Triangle
 	pOut->PrintMessage("Drawing a Triangle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
-	pOut->DrawTr(P1, P2, P2, gfxInfo, true);
+	pOut->DrawTr(P1, P2, P3, gfxInfo, true);
 
 
 	pOut->PrintMessage("Drawing a Triangle Test ==> OK,  Click anywhere to continue");
