@@ -10,8 +10,10 @@ Output::Output()
 	UI.height = 800;
 	UI.wx = 5;
 	UI.wy =5;
-	UI.SqSize = 160;
-	
+	UI.SqrSize = 160;
+	UI.HexagonVertices =6;
+	UI.HexagonSize = 160;
+
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
 	UI.MenuItemWidth = 70;
@@ -168,26 +170,115 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 	
 }
-void Output::DrawSquare(Point P1, GfxInfo SqGfxInfo, bool selected) const {
+void Output::DrawSqr(Point P1, GfxInfo SqGfxInfo, bool selected) const {
 	color DrawingClr;
-	if (selected) DrawingClr = UI.HighlightColor;
-	else DrawingClr = SqGfxInfo.DrawClr;
+	if (selected) 
+		DrawingClr = UI.HighlightColor;
+	else
+		DrawingClr = SqGfxInfo.DrawClr;
+
 	pWind->SetPen(DrawingClr, 1);
 	drawstyle style;
-	if (SqGfxInfo.isFilled) {
+	if (SqGfxInfo.isFilled)
+	{
 		style = FILLED;
 		pWind->SetBrush(SqGfxInfo.FillClr);
 	}
-	else style = FRAME;
+	else 
+		style = FRAME;
 	Point p3, p4;
-	p3.x = P1.x + UI.SqSize / 2;
-	p3.y = P1.y - UI.SqSize / 2;
-	p4.x = P1.x - UI.SqSize / 2;
-	p4.y = P1.y + UI.SqSize / 2;
+
+	p3.x = P1.x + UI.SqrSize / 2;
+	p3.y = P1.y - UI.SqrSize / 2;
+	p4.x = P1.x - UI.SqrSize / 2;
+	p4.y = P1.y + UI.SqrSize / 2;
 	
 	pWind->DrawRectangle(p3.x, p3.y, p4.x, p4.y, style);
 }
 
+void Output::DrawTr(Point P1,Point P2,Point P3, GfxInfo TrGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor;
+	else
+		DrawingClr = TrGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (TrGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TrGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,P3.x,P3.y, style);
+
+}
+void Output::DrawHex(Point P1, GfxInfo HXGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor;
+	else
+		DrawingClr = HXGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (HXGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(HXGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	int* x = new int[UI.HexagonVertices];
+	int* y = new int[UI.HexagonVertices];
+	x[0] = P1.x + UI.HexagonSize / 2;
+	y[0] = P1.y + UI.HexagonSize / 2;
+	x[1] = P1.x + UI.HexagonSize;
+	y[1] = P1.y;
+	x[2] = P1.x + UI.HexagonSize / 2;
+	y[2] = P1.y - UI.HexagonSize / 2;
+	x[3] = P1.x - UI.HexagonSize / 2;
+	y[3] = P1.y - UI.HexagonSize / 2;
+	x[4] = P1.x - UI.HexagonSize;
+	y[4] = P1.y ;
+	x[5] = P1.x - UI.HexagonSize / 2;
+	y[5] = P1.y + UI.HexagonSize / 2;
+
+	pWind->DrawPolygon(x,y, UI.HexagonVertices, style);
+	delete[] x;
+	delete[] y;
+
+}
+void Output::DrawCirc(Point P1,Point P2 , GfxInfo CircGfxInfo, bool selected) const
+{
+	color DrawingClr;
+	if (selected)
+		DrawingClr = UI.HighlightColor;
+	else
+		DrawingClr = CircGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, 1);
+	drawstyle style;
+	if (CircGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CircGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	int radius = sqrt((pow((P1.y) - (P2.y), 2) + pow((P1.x) - (P2.x), 2)));
+
+
+
+	pWind->DrawCircle(P1.x, P1.y,radius , style);
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 Output::~Output()
