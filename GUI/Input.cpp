@@ -52,6 +52,10 @@ ActionType Input::GetUserAction() const
 			switch (ClickedItemOrder)
 			{
 			case ITM_RECT: return DRAW_RECT;
+			case ITM_SQUARE: return DRAW_SQUARE;
+			case ITM_TRIANGLE: return DRAW_TRIANGLE;
+			case ITM_HEXAGON: return DRAW_HEXAGON;
+			case ITM_CIRCLE: return DRAW_CIRCLE;
 			case ITM_SELECTONE: return SELECTONE;
 			case ITM_MOVE: return MOVE;
 			case ITM_CLEAR: return CLEAR;

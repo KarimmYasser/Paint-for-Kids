@@ -7,7 +7,10 @@
 enum ActionType //The actions supported (you can add more if needed)
 {
 	DRAW_RECT,		//Draw Rectangle
-	DRAW_SQ,
+	DRAW_SQUARE,
+	DRAW_TRIANGLE,
+	DRAW_HEXAGON,
+	DRAW_CIRCLE,
 	EXIT,			//Exit
 	SELECTONE,
 	UNDO,

@@ -16,7 +16,7 @@ Output::Output()
 
 	UI.StatusBarHeight = 50;
 	UI.ToolBarHeight = 50;
-	UI.MenuItemWidth = 70;
+	UI.MenuItemWidth = 50;
 	
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -83,6 +83,10 @@ void Output::CreateDrawToolBar() const
 	//reoder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Square.jpg";
+	MenuItemImages[ITM_TRIANGLE] = "images\\MenuItems\\Triangle.jpg";
+	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Hexagon.jpg";
+	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
 	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
 	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
 	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";

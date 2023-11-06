@@ -288,6 +288,22 @@ int main()
 				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 				break;
 
+		case DRAW_SQUARE:
+			pOut->PrintMessage("Action: Draw a Square , Click anywhere");
+			break;
+
+		case DRAW_TRIANGLE:
+			pOut->PrintMessage("Action: Draw a Triangle , Click anywhere");
+			break;
+
+		case DRAW_HEXAGON:
+			pOut->PrintMessage("Action: Draw a Hexagon , Click anywhere");
+			break;
+
+		case DRAW_CIRCLE:
+			pOut->PrintMessage("Action: Draw a Circle , Click anywhere");
+			break;
+
 		case STATUS:
 				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 				break;
