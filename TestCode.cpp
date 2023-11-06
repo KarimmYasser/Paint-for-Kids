@@ -259,6 +259,10 @@ int main()
 	
 	pOut->PrintMessage("Testing Input ability to read strings");
 
+	string message = pIn->GetSrting(pOut);
+	pOut->ClearStatusBar();
+	pOut->PrintMessage("You Entered ( " + message + " )");
+	
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar
 	// 2- After reading the string clear the status bar
