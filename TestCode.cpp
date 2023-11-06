@@ -261,7 +261,7 @@ int main()
 
 	string message = pIn->GetSrting(pOut);
 	pOut->ClearStatusBar();
-	pOut->PrintMessage("You Entered ( " + message + " )");
+	pOut->PrintMessage("You Entered : " + message);
 	
 	///TODO: Add code here to 
 	// 1- Read a string from the user on the status bar
