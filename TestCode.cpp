@@ -104,6 +104,22 @@ int main()
 	pOut->DrawSqr(P1, gfxInfo, true);
 	///TODO: Add code to draw Square, Normal and Highlighted
 
+	pOut->PrintMessage("Drawing a Square, Filled,Click a center point");
+	pIn->GetPointClicked(P1.x, P1.y);
+
+	gfxInfo.BorderWdth = 5;
+	gfxInfo.DrawClr = BLACK;	//any color for border
+	gfxInfo.isFilled = true;	//Figure is filled
+	pOut->DrawSqr(P1, gfxInfo, false);
+
+	// Drawing highlighted filled square
+	pOut->PrintMessage("Drawing a Square, Filled and Highlighted, Click to continue");
+	pIn->GetPointClicked(x, y);	//Wait for any click
+
+	pOut->PrintMessage("Drawing a Square, Highlighted and filled, Click to highlight");
+	pIn->GetPointClicked(x, y);
+	pOut->DrawSqr(P1, gfxInfo, true);
+
 	pOut->PrintMessage("Drawing a Square Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
