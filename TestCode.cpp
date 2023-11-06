@@ -259,14 +259,12 @@ int main()
 	
 	pOut->PrintMessage("Testing Input ability to read strings");
 
-	string message = pIn->GetSrting(pOut);
-	pOut->ClearStatusBar();
-	pOut->PrintMessage("You Entered : " + message);
-	
 	///TODO: Add code here to 
-	// 1- Read a string from the user on the status bar
-	// 2- After reading the string clear the status bar
-	// 3- print on the status bar "You Entered" then print the string
+		
+	string message = pIn->GetSrting(pOut);					// 1- Read a string from the user on the status bar
+	pOut->ClearStatusBar();									// 2- After reading the string clear the status bar
+	pOut->PrintMessage("You Entered : " + message);			// 3- print on the status bar "You Entered" then print the string
+	
 
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -289,8 +287,8 @@ int main()
 		switch (ActType)
 		{
 		case DRAW_RECT:
-				pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
-				break;
+			pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
+			break;
 
 		case DRAW_SQUARE:
 			pOut->PrintMessage("Action: Draw a Square , Click anywhere");
@@ -309,8 +307,8 @@ int main()
 			break;
 
 		case STATUS:
-				pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
-				break;
+			pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
+			break;
 		
 		case SAVE:
 			pOut->PrintMessage("Action: Save Graph, Click anywhere");
@@ -333,22 +331,22 @@ int main()
 			break;
 
 		case DRAWING_AREA:
-				pOut->PrintMessage("Action: a click on the Drawing Area, Click anywhere");
-				break;
+			pOut->PrintMessage("Action: a click on the Drawing Area, Click anywhere");
+			break;
 
 		case EMPTY:
-				pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
-				break;
+			pOut->PrintMessage("Action: a click on empty area in the Design Tool Bar, Click anywhere");
+			break;
 
 		case TO_DRAW:
-				pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
-				pOut->CreateDrawToolBar();
-				break;
+			pOut->PrintMessage("Action: Switch to Draw Mode, creating simualtion tool bar");
+			pOut->CreateDrawToolBar();
+			break;
 
 		case TO_PLAY:
-				pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
-				pOut->CreatePlayToolBar();
-				break;
+			pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
+			pOut->CreatePlayToolBar();
+			break;
 
 
 		///TODO: Add more cases for the other action types
