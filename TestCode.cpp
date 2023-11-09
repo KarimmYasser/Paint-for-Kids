@@ -364,6 +364,13 @@ int main()
 			pOut->CreatePlayToolBar();
 			break;
 
+		case CHANGECOLOR:
+			pOut->CreateColorPalette();
+			pOut->PrintMessage("Action:You pressed the change color button");
+			pOut->PrintMessage("Action: Press anywhere to delete the figure");
+			pIn->GetPointClicked(x, y);
+			pOut->deleteColorPalette();
+
 
 		///TODO: Add more cases for the other action types
 

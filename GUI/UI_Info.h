@@ -10,7 +10,7 @@
 enum GUI_MODE	//Graphical user interface mode
 {
 	MODE_DRAW,	//Drawing mode (startup mode)
-	MODE_PLAY	//Playing mode
+	MODE_PLAY,	//Playing mode
 };
 
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
@@ -31,7 +31,9 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_REDO,
 	ITM_SAVE,
 	ITM_LOAD,
-	ITM_EXIT,		//Exit item
+	ITM_CHANGECOLOR,
+	ITM_EXIT,	//Exit item
+
 	
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
@@ -46,6 +48,17 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
+};
+enum ColorPaletteItem
+{
+	COLOR_BLACK,
+	COLOR_YELLOW,
+	COLOR_ORANGE,
+	COLOR_RED,
+	COLOR_GREEN,
+	COLOR_BLUE,
+
+	colors
 };
 
 
@@ -63,7 +76,11 @@ struct UI_Info	//User Interface Info.
 		StatusBarHeight,	//Status Bar Height
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 		MenuItemWidth,    	//Width of each item in toolbar menu
-		SqrSize,      //Squere Size
+		ColorPaletteWidthstart,
+		ColorPaletteWidthend,
+		ColorPaletteHeightstart,
+		ColorPaletteHeightend,
+		SqrSize,      //Square Size
 		HexagonVertices,
 		HexagonSize;
 
@@ -74,6 +91,7 @@ struct UI_Info	//User Interface Info.
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
+	color ChangeColorPalette;
 	int PenWidth;			//width of the pen that draws shapes
 
 	/// Add more members if needed

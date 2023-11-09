@@ -64,6 +64,7 @@ ActionType Input::GetUserAction() const
 			case ITM_REDO: return REDO;
 			case ITM_SAVE: return SAVE;
 			case ITM_LOAD: return LOAD;
+			case ITM_CHANGECOLOR: return CHANGECOLOR;
 			case ITM_EXIT: return EXIT;
 			
 			default: return EMPTY;	//A click on empty place in desgin toolbar

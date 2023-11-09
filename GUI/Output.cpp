@@ -14,14 +14,20 @@ Output::Output()
 	UI.HexagonVertices =6;
 	UI.HexagonSize = 160;
 
-	UI.StatusBarHeight = 50;
+	UI.StatusBarHeight = 60;
 	UI.ToolBarHeight = 50;
 	UI.MenuItemWidth = 50;
+
+	UI.ColorPaletteWidthstart = UI.width / 3;
+	UI.ColorPaletteWidthend = UI.width / 3 + colors * UI.MenuItemWidth;
+	UI.ColorPaletteHeightstart = 65;
+	UI.ColorPaletteHeightend = 65 + UI.ToolBarHeight;
 	
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
 	UI.MsgColor = RED;		//Messages color
 	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
+	UI.ChangeColorPalette = WHITE;
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = TURQUOISE;
 	UI.PenWidth = 3;	//width of the figures frames
@@ -80,7 +86,7 @@ void Output::CreateDrawToolBar() const
 	
 	//First prepare List of images for each menu item
 	//To control the order of these images in the menu, 
-	//reoder them in UI_Info.h ==> enum DrawMenuItem
+	//reorder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Square.jpg";
@@ -95,7 +101,9 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
@@ -136,7 +144,31 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight/1.5), msg);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+                              
+void Output::CreateColorPalette() const
+{
+	string Colors[colors];
+	Colors[COLOR_BLACK] = "images\\colors\\black.jpg";
+	Colors[COLOR_BLUE] = "images\\colors\\blue.jpg";
+	Colors[COLOR_GREEN] = "images\\colors\\green.jpg";
+	Colors[COLOR_ORANGE] = "images\\colors\\orange.jpg";
+	Colors[COLOR_RED] = "images\\colors\\red.jpg";
+	Colors[COLOR_YELLOW] = "images\\colors\\yellow.jpg";
 
+	pWind->SetPen(UI.ChangeColorPalette, 1);
+	pWind->SetBrush(UI.ChangeColorPalette);
+	pWind->DrawRectangle(UI.ColorPaletteWidthstart-10, UI.ColorPaletteHeightstart-10, UI.ColorPaletteWidthend+10, UI.ColorPaletteHeightend+10);
+
+	for (int i = 0; i < colors; i++)
+		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth, UI.ToolBarHeight);
+	
+}
+void Output::deleteColorPalette() const
+{
+	pWind->SetPen(UI.BkGrndColor, 1);
+	pWind->SetBrush(UI.BkGrndColor);
+	pWind->DrawRectangle(UI.ColorPaletteWidthstart - 10, UI.ColorPaletteHeightstart - 10, UI.ColorPaletteWidthend + 10, UI.ColorPaletteHeightend + 10);
+}
 color Output::getCrntDrawColor() const	//get current drawing color
 {	return UI.DrawColor;	}
 //////////////////////////////////////////////////////////////////////////////////////////
