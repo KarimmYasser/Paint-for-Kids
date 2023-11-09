@@ -330,6 +330,18 @@ int main()
 			pOut->PrintMessage("Action: Save Graph, Click anywhere");
 			break;
 		
+		case UNDO:
+			pOut->PrintMessage("Action: Undo Action, Click anywhere");
+			break;
+
+		case REDO:
+			pOut->PrintMessage("Action: Redo Action, Click anywhere");
+			break;
+
+		case SELECTONE:
+			pOut->PrintMessage("Action: Select One, Click anywhere");
+			break;
+
 		case LOAD:
 			pOut->PrintMessage("Action: Load Graph, Click anywhere");
 			break;
@@ -366,7 +378,8 @@ int main()
 
 		case CHANGECOLOR:
 			pOut->CreateColorPalette();
-			pOut->PrintMessage("Action:You pressed the change color button");
+			pOut->PrintMessage("Action:You pressed the change color button, Click anywhere");
+			pIn->GetPointClicked(x, y);
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();
