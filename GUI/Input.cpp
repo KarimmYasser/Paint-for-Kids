@@ -73,7 +73,7 @@ ActionType Input::GetUserAction() const
 
 			if (x >= UI.ColorPaletteWidthstart && x < UI.ColorPaletteWidthend) {
 
-				int ClickedItemOrder = ((x-UI.ColorPaletteWidthstart) / (UI.MenuItemWidth))+35;
+				int ClickedItemOrder = ((x-UI.ColorPaletteWidthstart) / (UI.MenuItemWidth));
 				switch (ClickedItemOrder) {
 				case(COLOR_BLACK): return BLACKCLR;
 				case(COLOR_YELLOW): return YELLOWCLR;
