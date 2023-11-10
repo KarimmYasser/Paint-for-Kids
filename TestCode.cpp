@@ -1,5 +1,6 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
+#include "iostream"
 //tst
 //test2
 //This is a test code to test the Input and Output classes
@@ -256,12 +257,6 @@ int main()
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawCirc(P1, P2, gfxInfo, true);
 
-
-
-
-
-
-
 	pOut->PrintMessage("Drawing a Circle Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x,y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -292,7 +287,8 @@ int main()
 	pOut->PrintMessage("TEST4: Testing Input ability to detect User Action, click anywhere");
 
 	ActionType ActType;
-	
+	ActionType ActiType;
+	int i = 5;
 	///TODO:  
 	//You must add a case for each action (both Draw mode and Play mode actions)
 	//Add cases for the missing actions below
@@ -325,11 +321,11 @@ int main()
 		case STATUS:
 			pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 			break;
-		
+
 		case SAVE:
 			pOut->PrintMessage("Action: Save Graph, Click anywhere");
 			break;
-		
+
 		case UNDO:
 			pOut->PrintMessage("Action: Undo Action, Click anywhere");
 			break;
@@ -378,8 +374,45 @@ int main()
 
 		case CHANGECOLOR:
 			pOut->CreateColorPalette();
-			pOut->PrintMessage("Action:You pressed the change color button, Click anywhere");
-			pIn->GetPointClicked(x, y);
+			pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");
+
+			do {
+			ActiType = pIn->GetUserAction();
+
+				switch (ActiType) {
+
+				case BLACKCLR:
+					pOut->PrintMessage("Action: you pressed the black color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				case YELLOWCLR:
+					pOut->PrintMessage("Action: you pressed the yellow color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				case ORANGECLR:
+					pOut->PrintMessage("Action: you pressed the orange color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				case REDCLR:
+					pOut->PrintMessage("Action: you pressed the red color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				case GREENCLR:
+					pOut->PrintMessage("Action: you pressed the green color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				case BLUECLR:
+					pOut->PrintMessage("Action: you pressed the blue color");
+					//pIn->GetPointClicked(x, y);
+					break;
+
+				}
+			} while (i-->0);
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();

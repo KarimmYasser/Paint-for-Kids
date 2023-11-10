@@ -1,7 +1,6 @@
 #include "Input.h"
 #include "Output.h"
-
-
+#include <iostream>
 Input::Input(window* pW) 
 {
 	pWind = pW; //point to the passed window
@@ -67,9 +66,27 @@ ActionType Input::GetUserAction() const
 			case ITM_CHANGECOLOR: return CHANGECOLOR;
 			case ITM_EXIT: return EXIT;
 			
-			default: return EMPTY;	//A click on empty place in desgin toolbar
+			default: return EMPTY;	//A click on empty place in design toolbar
 			}
 		}
+
+		if (y >= UI.ColorPaletteHeightstart && y < UI.ColorPaletteHeightend) {
+
+			if (x >= UI.ColorPaletteWidthstart && x < UI.ColorPaletteWidthend) {
+
+				int ClickedItemOrder = (x-UI.ColorPaletteWidthstart) / (UI.MenuItemWidth);
+
+				switch (ClickedItemOrder) {
+				case(COLOR_BLACK): return BLACKCLR;
+				case(COLOR_YELLOW): return YELLOWCLR;
+				case(COLOR_ORANGE): return ORANGECLR;
+				case(COLOR_RED): return REDCLR;
+				case(COLOR_GREEN): return GREENCLR;
+				case(COLOR_BLUE): return BLUECLR;
+				}
+			}
+		}
+
 
 		//[2] User clicks on the drawing area
 		if ( y >= UI.ToolBarHeight && y < UI.height - UI.StatusBarHeight)
@@ -91,6 +108,7 @@ ActionType Input::GetUserAction() const
 }
 /////////////////////////////////
 	
-Input::~Input()
-{
-}
+	Input::~Input()
+	{
+	}
+

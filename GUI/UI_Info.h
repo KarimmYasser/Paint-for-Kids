@@ -17,7 +17,7 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu
 	//If you want to change the menu items order, change the order here
-	ITM_RECT,	//Recangle item in menu
+	ITM_RECT,	//Rectangle item in menu
 	ITM_SQUARE,
 	ITM_TRIANGLE,
 	ITM_HEXAGON,
@@ -49,6 +49,7 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
 	
 };
+
 enum ColorPaletteItem
 {
 	COLOR_BLACK,

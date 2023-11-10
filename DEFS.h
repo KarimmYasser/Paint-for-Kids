@@ -25,7 +25,15 @@ enum ActionType //The actions supported (you can add more if needed)
 	MOVE,
 	CLEAR,
 	DELET,
-	CHANGECOLOR
+	CHANGECOLOR,
+	BLACKCLR = 0,
+	YELLOWCLR,
+	ORANGECLR,
+	REDCLR,
+	GREENCLR,
+	BLUECLR
+
+	
 
 	///TODO: Add the other action types of the two modes
 };
