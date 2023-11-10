@@ -4,12 +4,12 @@
 
 class Output	//The application manager should have a pointer to this class
 {
-private:	
+private:
 	window* pWind;	//Pointer to the Graphics Window
 public:
-	Output();		
+	Output();
 
-	window* CreateWind(int, int, int , int) const; //creates the application window
+	window* CreateWind(int, int, int, int) const; //creates the application window
 	void CreateDrawToolBar() const;	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar() const;	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
@@ -20,22 +20,22 @@ public:
 	void ClearDrawArea() const;	//Clears the drawing area
 	void CreateColorPalette() const;
 	void deleteColorPalette() const;
-	
+
 	// -- Figures Drawing functions
-	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected=false) const;  //Draw a rectangle
+	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected = false) const;  //Draw a rectangle
 	void DrawSqr(Point P1, GfxInfo SqGfxInfo, bool selected = false) const;
-	void DrawTr(Point P1, Point P2, Point P3, GfxInfo TrGfxInfo, bool selected=false) const;
-	void DrawHex(Point P1, GfxInfo HXGfxInfo, bool selected=false) const;
-	void DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected=false) const;
+	void DrawTr(Point P1, Point P2, Point P3, GfxInfo TrGfxInfo, bool selected = false) const;
+	void DrawHex(Point P1, GfxInfo HXGfxInfo, bool selected = false) const;
+	void DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected = false) const;
 	///Make similar functions for drawing all other figure types.
-	
+
 	void PrintMessage(string msg) const;	//Print a message on Status bar
 
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
 	int getCrntPenWidth() const;		//get current pen width
 
-	
+
 	~Output();
 };
 

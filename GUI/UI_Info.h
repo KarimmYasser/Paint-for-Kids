@@ -12,7 +12,7 @@ enum GUI_MODE	//Graphical user interface mode
 	MODE_DRAW,	//Drawing mode (startup mode)
 	MODE_PLAY,	//Playing mode
 };
-
+//o
 enum DrawMenuItem //The items of the Draw menu (you should add more items)
 {
 	//Note: Items are **(ordered)** here as they appear in menu
@@ -35,9 +35,9 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_CHANGECOLOR,
 	ITM_EXIT,	//Exit item
 
-	
+
 	DRAW_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+
 };
 
 enum PlayMenuItem //The items of the Play menu (you should add more items)
@@ -50,7 +50,7 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 	ITM_PICKANDHIDE,
 
 	PLAY_ITM_COUNT		//no. of menu items ==> This should be the last line in this enum
-	
+
 };
 enum PickAndHideItem
 {
@@ -65,14 +65,14 @@ enum PickAndHideItem
 
 enum ColorPaletteItem
 {
-	COLOR_BLACK=35,
+	COLOR_BLACK = 35,
 	COLOR_YELLOW,
 	COLOR_ORANGE,
 	COLOR_RED,
 	COLOR_GREEN,
 	COLOR_BLUE,
 
-	colors=6 
+	colors = 6
 };
 
 
@@ -84,7 +84,7 @@ __declspec(selectany) //This line to prevent "redefinition error"
 struct UI_Info	//User Interface Info.
 {
 	GUI_MODE InterfaceMode;
-	
+
 	int	width, height,	    //Window width and height
 		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
