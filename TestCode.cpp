@@ -383,31 +383,37 @@ int main()
 				case BLACKCLR:
 					pOut->PrintMessage("Action: you pressed the black color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				case YELLOWCLR:
 					pOut->PrintMessage("Action: you pressed the yellow color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				case ORANGECLR:
 					pOut->PrintMessage("Action: you pressed the orange color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				case REDCLR:
 					pOut->PrintMessage("Action: you pressed the red color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				case GREENCLR:
 					pOut->PrintMessage("Action: you pressed the green color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				case BLUECLR:
 					pOut->PrintMessage("Action: you pressed the blue color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("Action: Press anywhere to continue");
 					break;
 
 				}

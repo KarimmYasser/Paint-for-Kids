@@ -74,10 +74,13 @@ ActionType Input::GetUserAction() const
 
 			if (x >= UI.ColorPaletteWidthstart && x < UI.ColorPaletteWidthend) {
 
-				int ClickedItemOrder = (x-UI.ColorPaletteWidthstart) / (UI.MenuItemWidth);
+				int ClickedItemOrder = ((x-UI.ColorPaletteWidthstart) / (UI.MenuItemWidth))+35;
 
+				std::cout << x << endl;
 				switch (ClickedItemOrder) {
-				case(COLOR_BLACK): return BLACKCLR;
+				case(COLOR_BLACK): 
+					std::cout << ClickedItemOrder << endl;
+					return BLACKCLR;
 				case(COLOR_YELLOW): return YELLOWCLR;
 				case(COLOR_ORANGE): return ORANGECLR;
 				case(COLOR_RED): return REDCLR;

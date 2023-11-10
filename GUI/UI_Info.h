@@ -52,14 +52,14 @@ enum PlayMenuItem //The items of the Play menu (you should add more items)
 
 enum ColorPaletteItem
 {
-	COLOR_BLACK,
+	COLOR_BLACK=35,
 	COLOR_YELLOW,
 	COLOR_ORANGE,
 	COLOR_RED,
 	COLOR_GREEN,
 	COLOR_BLUE,
 
-	colors
+	colors =6
 };
 
 

@@ -26,7 +26,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	CLEAR,
 	DELET,
 	CHANGECOLOR,
-	BLACKCLR = 0,
+	BLACKCLR = 35,
 	YELLOWCLR,
 	ORANGECLR,
 	REDCLR,
