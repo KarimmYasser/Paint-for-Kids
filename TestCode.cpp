@@ -387,6 +387,7 @@ int main()
 				case YELLOWCLR:
 					pOut->PrintMessage("Action: you pressed the yellow color");
 					pIn->GetPointClicked(x, y);
+					pOut->PrintMessage("press anywhere");
 					break;
 
 				case ORANGECLR:
