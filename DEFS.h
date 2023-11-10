@@ -15,7 +15,8 @@ enum ActionType //The actions supported (you can add more if needed)
 	SELECTONE,
 	UNDO,
 	REDO,
-	TO_DRAW,		//Switch interface to Draw mode
+	PICKANDHIDE,
+	TO_DRAW,//Switch interface to Draw mode
 	TO_PLAY,		//Switch interface to Play mode
 	EMPTY,			//A click on empty place in the toolbar
 	DRAWING_AREA,	//A click on the drawing area
@@ -26,7 +27,7 @@ enum ActionType //The actions supported (you can add more if needed)
 	CLEAR,
 	DELET,
 	CHANGECOLOR,
-	BLACKCLR,
+	BLACKCLR =0,
 	YELLOWCLR,
 	ORANGECLR,
 	REDCLR,

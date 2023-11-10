@@ -88,6 +88,7 @@ void Output::CreateDrawToolBar() const
 	//To control the order of these images in the menu, 
 	//reorder them in UI_Info.h ==> enum DrawMenuItem
 	string MenuItemImages[DRAW_ITM_COUNT];
+	MenuItemImages[ITM_SWITCHPLAY] = "images\\MenuItems\\PLAY.jpg";
 	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
 	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Square.jpg";
 	MenuItemImages[ITM_TRIANGLE] = "images\\MenuItems\\Triangle.jpg";
@@ -122,9 +123,47 @@ void Output::CreateDrawToolBar() const
 void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
+	pWind->SetBrush(WHITE);
+	pWind->SetPen(WHITE, 1);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+
+	string PlayToolBarImages[PLAY_ITM_COUNT];
+	PlayToolBarImages[ITM_SWITCHDRAW] = "images\\MenuItems\\DRAW.jpg";
+	PlayToolBarImages[ITM_PICKANDHIDE] = "images\\MenuItems\\PICKANDHIDE.jpg";
+
+
+	for (int i = 0; i < PLAY_ITM_COUNT; i++)
+	{
+		pWind->DrawImage(PlayToolBarImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+	}
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+
+
+	
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+
+void Output::CreatePickAndHideToolbar() const
+{
+	UI.InterfaceMode = MODE_PLAY;
+	pWind->SetBrush(WHITE);
+	pWind->SetPen(WHITE, 1);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+	
+	string PickAndHideImages[PICKANDHIDECOUNT];
+	PickAndHideImages[ITM_PICKBYFIGURE] = "images\\MenuItems\\pickbyfig.jpg";
+	PickAndHideImages[ITM_PICKBYCOLOR] = "images\\MenuItems\\ChangeColor.jpg";
+	PickAndHideImages[ITM_PICKBYBOTH] = "images\\MenuItems\\pickbyboth.jpg";
+
+	for (int i = 0; i < PICKANDHIDECOUNT; i++)
+	{
+		pWind->DrawImage(PickAndHideImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+	}
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+}
 
 void Output::ClearDrawArea() const
 {

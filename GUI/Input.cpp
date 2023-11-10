@@ -49,6 +49,7 @@ ActionType Input::GetUserAction() const
 
 			switch (ClickedItemOrder)
 			{
+			case ITM_SWITCHPLAY: return TO_PLAY;
 			case ITM_RECT: return DRAW_RECT;
 			case ITM_SQUARE: return DRAW_SQUARE;
 			case ITM_TRIANGLE: return DRAW_TRIANGLE;
@@ -97,9 +98,23 @@ ActionType Input::GetUserAction() const
 	}
 	else	//GUI is in PLAY mode
 	{
+		
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding action
+		
+		if (y >= 0 && y < UI.ToolBarHeight)
+		{
+			int ClickedItemOrder = x / UI.MenuItemWidth;
+			switch (ClickedItemOrder)
+			{
+			case(ITM_SWITCHDRAW):return TO_DRAW;
+			case(ITM_PICKANDHIDE):return PICKANDHIDE;
+
+
+			}
+		}
+
 		return TO_PLAY;	//just for now. This should be updated
 	}	
 

@@ -370,6 +370,11 @@ int main()
 			pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
 			pOut->CreatePlayToolBar();
 			break;
+		
+		case PICKANDHIDE:
+			pOut->PrintMessage("Action:Pick and Hide. Choose an Option");
+			pOut->CreatePickAndHideToolbar();
+
 
 		case CHANGECOLOR:
 			pOut->CreateColorPalette();
