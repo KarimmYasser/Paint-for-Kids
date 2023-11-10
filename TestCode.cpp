@@ -376,43 +376,42 @@ int main()
 			pOut->CreateColorPalette();
 			pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");
 
-			do {
 			ActiType = pIn->GetUserAction();
 
 				switch (ActiType) {
 
 				case BLACKCLR:
 					pOut->PrintMessage("Action: you pressed the black color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				case YELLOWCLR:
 					pOut->PrintMessage("Action: you pressed the yellow color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				case ORANGECLR:
 					pOut->PrintMessage("Action: you pressed the orange color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				case REDCLR:
 					pOut->PrintMessage("Action: you pressed the red color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				case GREENCLR:
 					pOut->PrintMessage("Action: you pressed the green color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				case BLUECLR:
 					pOut->PrintMessage("Action: you pressed the blue color");
-					//pIn->GetPointClicked(x, y);
+					pIn->GetPointClicked(x, y);
 					break;
 
 				}
-			} while (i-->0);
+
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();
