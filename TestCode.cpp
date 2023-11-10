@@ -415,6 +415,7 @@ int main()
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();
+			pOut->PrintMessage("TEST4: Testing Input ability to detect User Action, click anywhere");
 
 
 		///TODO: Add more cases for the other action types
