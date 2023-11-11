@@ -1,5 +1,6 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
+#include "iostream"
 //tst
 //test2
 //This is a test code to test the Input and Output classes
@@ -375,7 +376,7 @@ int main()
 		case PICKANDHIDE:
 			pOut->PrintMessage("Action:Pick and Hide. Choose an Option");
 			pOut->CreatePickAndHideToolbar();
-
+			break;
 
 		case CHANGECOLOR:
 		pOut->CreateColorPalette();
@@ -388,6 +389,7 @@ int main()
 		case BLACKCLR:
 			pOut->PrintMessage("Action: you pressed the black color");
 			pIn->GetPointClicked(x, y);
+			std::cout << x;
 			break;
 
 		case YELLOWCLR:
