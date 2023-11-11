@@ -97,6 +97,7 @@ struct UI_Info	//User Interface Info.
 		SqrSize,      //Square Size
 		HexagonVertices,
 		HexagonSize;
+	bool conD;
 
 
 	color DrawColor;		//Drawing color

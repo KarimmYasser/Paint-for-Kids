@@ -381,7 +381,7 @@ int main()
 		case CHANGECOLOR:
 		pOut->CreateColorPalette();
 		pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");
-
+		UI.conD = true;
 		ActiType = pIn->GetUserAction();
 
 		switch (ActiType) {
@@ -424,6 +424,7 @@ int main()
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();
+			UI.conD = false;
 			pOut->PrintMessage("TEST4: Testing Input ability to detect User Action, click anywhere");
 
 

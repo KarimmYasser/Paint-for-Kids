@@ -3,6 +3,7 @@
 Input::Input(window* pW)
 {
 	pWind = pW; //point to the passed window
+	UI.conD = false;
 }
 
 void Input::GetPointClicked(int& x, int& y) const
@@ -70,7 +71,7 @@ ActionType Input::GetUserAction() const
 			}
 		}
 
-		if (y >= UI.ColorPaletteHeightstart && y < UI.ColorPaletteHeightend) {
+		if (y >= UI.ColorPaletteHeightstart && y < UI.ColorPaletteHeightend && UI.conD) {
 
 			if (x >= UI.ColorPaletteWidthstart && x < UI.ColorPaletteWidthend) {
 
