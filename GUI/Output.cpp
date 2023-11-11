@@ -30,6 +30,7 @@ Output::Output()
 	UI.ChangeColorPalette = WHITE;
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
 	UI.StatusBarColor = TURQUOISE;
+	UI.ToolBarColor = WHITE;
 	UI.PenWidth = 3;	//width of the figures frames
 
 
@@ -80,6 +81,9 @@ void Output::ClearStatusBar() const
 void Output::CreateDrawToolBar() const
 {
 	UI.InterfaceMode = MODE_DRAW;
+	pWind->SetPen(UI.ToolBarColor, 1);
+	pWind->SetBrush(UI.ToolBarColor);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 
 	//You can draw the tool bar icons in any way you want.
 	//Below is one possible way
@@ -103,19 +107,23 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
+	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
+	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu item and add it to the list
 
 	//Draw menu item one image at a time
 	for (int i = 0; i < DRAW_ITM_COUNT; i++)
+
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 
 
 	//Draw a line under the toolbar
-	pWind->SetPen(RED, 3);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
+	
+
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -136,8 +144,6 @@ void Output::CreatePlayToolBar() const
 	{
 		pWind->DrawImage(PlayToolBarImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 	}
-	pWind->SetPen(RED, 3);
-	pWind->DrawLine(0, UI.ToolBarHeight, UI.width, UI.ToolBarHeight);
 
 
 
@@ -170,7 +176,7 @@ void Output::ClearDrawArea() const
 	pWind->SetPen(UI.BkGrndColor, 1);
 	pWind->SetBrush(UI.BkGrndColor);
 	pWind->DrawRectangle(0, UI.ToolBarHeight, UI.width, UI.height - UI.StatusBarHeight);
-
+	CreateDrawToolBar();
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -183,7 +189,27 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight / 1.5), msg);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-
+//void Output::CreateENDRECORDING() const {
+//	pWind->SetPen(WHITE, 1);
+//	pWind->SetBrush(WHITE);
+//	pWind->DrawRectangle(15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+//	
+//	string MenuItemImages[1];
+////	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+//
+//	pWind->DrawImage(MenuItemImages[0], 15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+//}
+//
+//void Output::CreateSTARTRECORDING() const {
+//	pWind->SetPen(WHITE, 1);
+//	pWind->SetBrush(WHITE);
+//	pWind->DrawRectangle(15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+//	string MenuItemImages[1];
+//	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
+//
+//	pWind->DrawImage(MenuItemImages[0], 15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+//
+//}
 void Output::CreateColorPalette() const
 {
 	string Colors[colors];

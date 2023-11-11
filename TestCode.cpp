@@ -299,6 +299,7 @@ int main()
 
 		switch (ActType)
 		{
+		
 		case DRAW_RECT:
 			pOut->PrintMessage("Action: Draw a Rectangle , Click anywhere");
 			break;
@@ -318,7 +319,7 @@ int main()
 		case DRAW_CIRCLE:
 			pOut->PrintMessage("Action: Draw a Circle , Click anywhere");
 			break;
-
+		
 		case STATUS:
 			pOut->PrintMessage("Action: a click on the Status Bar, Click anywhere");
 			break;
@@ -377,7 +378,18 @@ int main()
 			pOut->PrintMessage("Action:Pick and Hide. Choose an Option");
 			pOut->CreatePickAndHideToolbar();
 			break;
+		case STARTRECORDING:
+			pOut->PrintMessage("Action: START RECORDING, Click anywhere");
+			//pOut->CreateENDRECORDING();
+			break;
 
+		case ENDRECORDING:
+			pOut->PrintMessage("Action: END RECORDING, Click anywhere");
+		//	pOut->CreateSTARTRECORDING();
+			break;
+		case PLAYRECORDING:
+			pOut->PrintMessage("Action: PLAY RECORDING, Click anywhere");
+			break;
 		case CHANGECOLOR:
 		pOut->CreateColorPalette();
 		pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");
@@ -419,8 +431,7 @@ int main()
 			break;
 
 		}
-		
-
+		 
 			pOut->PrintMessage("Action: Press anywhere to delete the figure");
 			pIn->GetPointClicked(x, y);
 			pOut->deleteColorPalette();
@@ -433,6 +444,7 @@ int main()
 
 		case EXIT:
 			break;
+
 		}
 	} while (ActType != EXIT);
 

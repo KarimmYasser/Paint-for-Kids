@@ -20,6 +20,11 @@ public:
 	void ClearDrawArea() const;	//Clears the drawing area
 	void CreateColorPalette() const;
 	void deleteColorPalette() const;
+	void CreateENDRECORDING() const;
+	void CreateSTARTRECORDING() const;
+	void deleteENDRECORDING() const;
+	void deleteSTARTRECORDING() const;
+
 
 	// -- Figures Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected = false) const;  //Draw a rectangle

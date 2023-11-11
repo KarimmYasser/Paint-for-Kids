@@ -33,6 +33,9 @@ enum DrawMenuItem //The items of the Draw menu (you should add more items)
 	ITM_SAVE,
 	ITM_LOAD,
 	ITM_CHANGECOLOR,
+	ITM_STARTRECORDING,
+	ITM_ENDRECORDING,
+	ITM_PLAYRECORDING,
 	ITM_EXIT,	//Exit item
 
 
@@ -106,6 +109,7 @@ struct UI_Info	//User Interface Info.
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
+	color ToolBarColor;
 	color ChangeColorPalette;
 	int PenWidth;			//width of the pen that draws shapes
 

@@ -26,13 +26,16 @@ enum ActionType //The actions supported (you can add more if needed)
 	MOVE,
 	CLEAR,
 	DELET,
+	STARTRECORDING,
+	ENDRECORDING,
+	PLAYRECORDING,
 	CHANGECOLOR,
 	BLACKCLR = 0,
 	YELLOWCLR,
 	ORANGECLR,
 	REDCLR,
 	GREENCLR,
-	BLUECLR
+	BLUECLR,
 
 
 
