@@ -188,11 +188,14 @@ void Output::CreateColorPalette() const
 {
 	string Colors[colors];
 	Colors[COLOR_BLACK] = "images\\colors\\black.jpg";
-	Colors[COLOR_BLUE] = "images\\colors\\blue.jpg";
-	Colors[COLOR_GREEN] = "images\\colors\\green.jpg";
+	
+	
+	
+	Colors[COLOR_YELLOW] = "images\\colors\\yellow.jpg";
 	Colors[COLOR_ORANGE] = "images\\colors\\orange.jpg";
 	Colors[COLOR_RED] = "images\\colors\\red.jpg";
-	Colors[COLOR_YELLOW] = "images\\colors\\yellow.jpg";
+	Colors[COLOR_GREEN] = "images\\colors\\green.jpg";
+	Colors[COLOR_BLUE] = "images\\colors\\blue.jpg";
 
 	pWind->SetPen(UI.ChangeColorPalette, 1);
 	pWind->SetBrush(UI.ChangeColorPalette);

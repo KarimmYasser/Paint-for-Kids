@@ -65,14 +65,14 @@ enum PickAndHideItem
 
 enum ColorPaletteItem
 {
-	COLOR_BLACK = 35,
+	COLOR_BLACK ,
 	COLOR_YELLOW,
 	COLOR_ORANGE,
 	COLOR_RED,
 	COLOR_GREEN,
 	COLOR_BLUE,
 
-	colors = 6
+	colors 
 };
 
 
