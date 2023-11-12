@@ -118,7 +118,8 @@ void Output::CreateDrawToolBar() const
 
 	//Draw menu item one image at a time
 	for (int i = 0; i < DRAW_ITM_COUNT; i++)
-
+		if(i==16){}
+		else
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 
@@ -196,28 +197,73 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight / 1.5), msg);
 }
-//////////////////////////////////////////////////////////////////////////////////////////
-//void Output::CreateENDRECORDING() const {
-//	pWind->SetPen(WHITE, 1);
-//	pWind->SetBrush(WHITE);
-//	pWind->DrawRectangle(15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
-//	
-//	string MenuItemImages[1];
-////	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
-//
-//	pWind->DrawImage(MenuItemImages[0], 15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
-//}
-//
-//void Output::CreateSTARTRECORDING() const {
-//	pWind->SetPen(WHITE, 1);
-//	pWind->SetBrush(WHITE);
-//	pWind->DrawRectangle(15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
-//	string MenuItemImages[1];
-//	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
-//
-//	pWind->DrawImage(MenuItemImages[0], 15 * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
-//
-//}
+void Output::CreateENDRECORDING() const {
+	UI.InterfaceMode = MODE_DRAW;
+	pWind->SetPen(UI.ToolBarColor, 1);
+	pWind->SetBrush(UI.ToolBarColor);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+
+	string MenuItemImages[DRAW_ITM_COUNT];
+	MenuItemImages[ITM_SWITCHPLAY] = "images\\MenuItems\\PLAY.jpg";
+	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Square.jpg";
+	MenuItemImages[ITM_TRIANGLE] = "images\\MenuItems\\Triangle.jpg";
+	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Hexagon.jpg";
+	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
+	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
+	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
+	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\DELETE.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
+	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
+	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
+	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
+	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
+	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
+	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
+	for (int i = 0; i < DRAW_ITM_COUNT; i++)
+		if (i == 15) {}
+		else
+			pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+
+}
+
+void Output::CreateSTARTRECORDING() const {
+	UI.InterfaceMode = MODE_DRAW;
+	pWind->SetPen(UI.ToolBarColor, 1);
+	pWind->SetBrush(UI.ToolBarColor);
+	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
+
+	string MenuItemImages[DRAW_ITM_COUNT];
+	MenuItemImages[ITM_SWITCHPLAY] = "images\\MenuItems\\PLAY.jpg";
+	MenuItemImages[ITM_RECT] = "images\\MenuItems\\Menu_Rect.jpg";
+	MenuItemImages[ITM_SQUARE] = "images\\MenuItems\\Square.jpg";
+	MenuItemImages[ITM_TRIANGLE] = "images\\MenuItems\\Triangle.jpg";
+	MenuItemImages[ITM_HEXAGON] = "images\\MenuItems\\Hexagon.jpg";
+	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
+	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
+	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
+	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";
+	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\DELETE.jpg";
+	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
+	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
+	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
+	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
+	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
+	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
+	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+
+	for (int i = 0; i < DRAW_ITM_COUNT; i++)
+		if (i == 16) {}
+		else
+			pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
+}
+
 void Output::CreateColorPalette() const
 {
 	string Colors[colors];

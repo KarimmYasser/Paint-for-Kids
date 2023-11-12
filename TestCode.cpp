@@ -405,12 +405,12 @@ int main()
 
 		case STARTRECORDING:
 			pOut->PrintMessage("Action: START RECORDING, Click anywhere");
-			//pOut->CreateENDRECORDING();
+			pOut->CreateENDRECORDING();
 			break;
 
 		case ENDRECORDING:
 			pOut->PrintMessage("Action: END RECORDING, Click anywhere");
-		//	pOut->CreateSTARTRECORDING();
+			pOut->CreateSTARTRECORDING();
 			break;
 
 		case PLAYRECORDING:
