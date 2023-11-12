@@ -289,6 +289,7 @@ int main()
 
 	ActionType ActType;
 	ActionType ActiType;
+	ActionType ActTypeForPickndHide;
 	int i = 5;
 	///TODO:  
 	//You must add a case for each action (both Draw mode and Play mode actions)
@@ -377,7 +378,31 @@ int main()
 		case PICKANDHIDE:
 			pOut->PrintMessage("Action:Pick and Hide. Choose an Option");
 			pOut->CreatePickAndHideToolbar();
+			UI.conDforPicknHide = true;
+			ActTypeForPickndHide = pIn->GetUserAction();
+			switch (ActTypeForPickndHide)
+			{
+			case PICKBYFIG:
+				pOut->PrintMessage("You Chose to Select by Figure");
+			
+		
+				break;
+
+			case PICKBYCOL:
+				pOut->PrintMessage("You Chose to Select by Color");
+				
+				break;
+			case PICKBYBOTH:
+				pOut->PrintMessage("You Chose to Pick by Both");
+				
+				break;
+			}
+			
+			pOut->deletePickAndHideToolbar();
+			UI.conDforPicknHide = false;
 			break;
+			
+
 		case STARTRECORDING:
 			pOut->PrintMessage("Action: START RECORDING, Click anywhere");
 			//pOut->CreateENDRECORDING();
@@ -387,9 +412,11 @@ int main()
 			pOut->PrintMessage("Action: END RECORDING, Click anywhere");
 		//	pOut->CreateSTARTRECORDING();
 			break;
+
 		case PLAYRECORDING:
 			pOut->PrintMessage("Action: PLAY RECORDING, Click anywhere");
 			break;
+
 		case CHANGECOLOR:
 		pOut->CreateColorPalette();
 		pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");

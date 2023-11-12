@@ -117,8 +117,19 @@ ActionType Input::GetUserAction() const
 
 			}
 		}
+		if (y>=UI.ToolBarHeight && y <= UI.PickandHidetoolbarheight && UI.conDforPicknHide)
+		{
+		
+			int clickeditemorder = x / UI.MenuItemWidth;
+			switch (clickeditemorder)
+			{
+			case(ITM_PICKBYFIGURE):return PICKBYFIG;
+			case(ITM_PICKBYCOLOR):return PICKBYCOL;
+			case(ITM_PICKBYBOTH):return PICKBYBOTH;
+			}
+		}
 
-		return TO_PLAY;	//just for now. This should be updated
+		
 	}
 
 }
