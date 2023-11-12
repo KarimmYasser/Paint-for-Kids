@@ -133,8 +133,8 @@ void Output::CreateDrawToolBar() const
 void Output::CreatePlayToolBar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
-	pWind->SetBrush(WHITE);
-	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(UI.ToolBarColor);
+	pWind->SetPen(UI.ToolBarColor, 1);
 	pWind->DrawRectangle(0, 0, UI.width, UI.ToolBarHeight);
 
 	string PlayToolBarImages[PLAY_ITM_COUNT];
@@ -156,8 +156,8 @@ void Output::CreatePlayToolBar() const
 void Output::CreatePickAndHideToolbar() const
 {
 	UI.InterfaceMode = MODE_PLAY;
-	pWind->SetBrush(WHITE);
-	pWind->SetPen(WHITE, 1);
+	pWind->SetBrush(UI.ToolBarColor);
+	pWind->SetPen(UI.ToolBarColor, 1);
 	pWind->DrawRectangle(0,UI.ToolBarHeight,UI.PickandHidetoolbarwidth, UI.PickandHidetoolbarheight);
 
 	string PickAndHideImages[PICKANDHIDECOUNT];
