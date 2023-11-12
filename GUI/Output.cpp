@@ -167,7 +167,7 @@ void Output::CreatePickAndHideToolbar() const
 
 	for (int i = 0; i < PICKANDHIDECOUNT; i++)
 	{
-		pWind->DrawImage(PickAndHideImages[i], i * UI.MenuItemWidth, UI.ToolBarHeight, UI.MenuItemWidth, UI.PickandHidetoolbarheight);
+		pWind->DrawImage(PickAndHideImages[i], i * UI.MenuItemWidth, UI.ToolBarHeight, UI.MenuItemWidth, UI.PickandHidetoolbarheight/2);
 	}
 	
 }
