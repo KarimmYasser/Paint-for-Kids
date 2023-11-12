@@ -17,7 +17,7 @@ Output::Output()
 	UI.StatusBarHeight = 60;
 	UI.ToolBarHeight = 50;
 	UI.MenuItemWidth = 50;
-	UI.PickandHidetoolbarheight = UI.PickandHidetoolbarheight+50;
+	UI.PickandHidetoolbarheight = UI.ToolBarHeight*2;
 	UI.PickandHidetoolbarwidth=3*UI.MenuItemWidth;
 
 	UI.ColorPaletteWidthstart = UI.width / 3;
