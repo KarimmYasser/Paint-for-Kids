@@ -55,12 +55,15 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawRect(P1, P2, gfxInfo, false);
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.1.2 - Drawing highlighted non-filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawRect(P1, P2, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.1.3 - Drawing a filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> filled,  Click two points");
@@ -72,13 +75,15 @@ int main()
 	gfxInfo.FillClr = GREEN;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawRect(P1, P2, gfxInfo, false);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.1.4 - Drawing a highlighted filled rectangle
 	pOut->PrintMessage("Drawing a Rectangle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawRect(P1, P2, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 
 	pOut->PrintMessage("Drawing a Rectangle Test ==> OK,  Click anywhere to continue");
@@ -96,7 +101,8 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawSqr(P1, gfxInfo, false);
-
+	if ((P1.y - UI.SqrSize)< UI.ToolBarHeight )
+		pOut->CreateDrawToolBar();
 	// 2.2.2 - Drawing highlighted non-filled square
 	pOut->PrintMessage("Drawing a Square, normal and Highlighted, Click to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -105,7 +111,8 @@ int main()
 	pIn->GetPointClicked(x, y);
 	pOut->DrawSqr(P1, gfxInfo, true);
 	///TODO: Add code to draw Square, Normal and Highlighted
-
+	if ((P1.y - UI.SqrSize) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	pOut->PrintMessage("Drawing a Square, Filled,Click a center point");
 	pIn->GetPointClicked(P1.x, P1.y);
 
@@ -113,15 +120,17 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = true;	//Figure is filled
 	pOut->DrawSqr(P1, gfxInfo, false);
-
+	if (P1.y < UI.ToolBarHeight )
+		pOut->CreateDrawToolBar();
 	// Drawing highlighted filled square
-	pOut->PrintMessage("Drawing a Square, Filled and Highlighted, Click to continue");
-	pIn->GetPointClicked(x, y);	//Wait for any click
+	if ((P1.y - UI.SqrSize) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	pOut->PrintMessage("Drawing a Square, Highlighted and filled, Click to highlight");
 	pIn->GetPointClicked(x, y);
 	pOut->DrawSqr(P1, gfxInfo, true);
-
+	if ((P1.y - UI.SqrSize) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	pOut->PrintMessage("Drawing a Square Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawArea();
@@ -142,12 +151,14 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawTr(P1, P2, P3, gfxInfo, false);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P3.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	// 2.3.2 - Drawing highlighted non-filled Triangle
 	pOut->PrintMessage("Drawing a Triangle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawTr(P1, P2, P3, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P3.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.3.3 - Drawing a filled Triangle
 	pOut->PrintMessage("Drawing a Triangle ==> filled,  Click three points");
@@ -160,13 +171,15 @@ int main()
 	gfxInfo.FillClr = RED;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawTr(P1, P2, P3, gfxInfo, false);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P3.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.3.4 - Drawing a highlighted filled Triangle
 	pOut->PrintMessage("Drawing a Triangle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawTr(P1, P2, P3, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P3.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	pOut->PrintMessage("Drawing a Triangle Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
@@ -187,13 +200,14 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawHex(P1, gfxInfo, false);
-
+	if ((P1.y- UI.HexagonSize * 0.866) < UI.ToolBarHeight )
+		pOut->CreateDrawToolBar();
 	// 2.4.2 - Drawing highlighted non-filled Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted non-filled, Click to Highlight");
-	pIn->GetPointClicked(x, y);	//Wait for any click
+	pIn->GetPointClicked(x, y);
 	pOut->DrawHex(P1, gfxInfo, true);
-
-
+	if ((P1.y - UI.HexagonSize * 0.866) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	// 2.4.3 - Drawing a filled Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> filled,  Click one point");
 	pIn->GetPointClicked(P1.x, P1.y);
@@ -204,13 +218,15 @@ int main()
 	gfxInfo.FillClr = ORANGE;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawHex(P1, gfxInfo, false);
-
+	if ((P1.y - UI.HexagonSize * 0.866) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.4.4 - Drawing a highlighted filled Hexagon
 	pOut->PrintMessage("Drawing a Hexagon ==> Highlighted filled, Click to Highlight");
-	pIn->GetPointClicked(x, y);	//Wait for any click
+	pIn->GetPointClicked(x, y);
 	pOut->DrawHex(P1, gfxInfo, true);
-
+	if ((P1.y - UI.HexagonSize * 0.866) < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 
 
@@ -234,12 +250,14 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawCirc(P1, P2, gfxInfo, false);
-
+	if ((P1.y) < UI.ToolBarHeight|| P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	// 2.5.2 - Drawing highlighted non-filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> Highlighted non-filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawCirc(P1, P2, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.5.3 - Drawing a filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> filled,  Click two points");
@@ -251,13 +269,15 @@ int main()
 	gfxInfo.FillClr = GOLD;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawCirc(P1, P2, gfxInfo, false);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 
 	// 2.5.4 - Drawing a highlighted filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> Highlighted filled, Click to Highlight");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->DrawCirc(P1, P2, gfxInfo, true);
-
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		pOut->CreateDrawToolBar();
 	pOut->PrintMessage("Drawing a Circle Test ==> OK,  Click anywhere to continue");
 	pIn->GetPointClicked(x, y);	//Wait for any click
 	pOut->ClearDrawArea();
