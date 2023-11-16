@@ -55,6 +55,7 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawRect(P1, P2, gfxInfo, false);
+
 	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
 		pOut->CreateDrawToolBar();
 
