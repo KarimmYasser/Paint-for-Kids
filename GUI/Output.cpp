@@ -110,7 +110,7 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
-	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD-1.jpg";
 	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
@@ -118,8 +118,6 @@ void Output::CreateDrawToolBar() const
 
 	//Draw menu item one image at a time
 	for (int i = 0; i < DRAW_ITM_COUNT; i++)
-		if(i==16){}
-		else
 		pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 
@@ -219,14 +217,12 @@ void Output::CreateENDRECORDING() const {
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
-	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
+	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD-1.jpg";
 	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
 	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	for (int i = 0; i < DRAW_ITM_COUNT; i++)
-		if (i == 15) {}
-		else
 			pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 
 }
@@ -254,13 +250,12 @@ void Output::CreateSTARTRECORDING() const {
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
-	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
+	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD-1.jpg";
 	MenuItemImages[ITM_PLAYRECORDING] = "images\\MenuItems\\PLAYRECORD.jpg";
 	MenuItemImages[ITM_EXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	for (int i = 0; i < DRAW_ITM_COUNT; i++)
-		if (i == 16) {}
-		else
+	
 			pWind->DrawImage(MenuItemImages[i], i * UI.MenuItemWidth, 0, UI.MenuItemWidth, UI.ToolBarHeight);
 }
 

@@ -76,6 +76,7 @@ int main()
 	gfxInfo.FillClr = GREEN;//any color for filling
 	gfxInfo.isFilled = true;//Figure is filled
 	pOut->DrawRect(P1, P2, gfxInfo, false);
+
 	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
 		pOut->CreateDrawToolBar();
 
@@ -251,7 +252,7 @@ int main()
 	gfxInfo.DrawClr = BLACK;	//any color for border
 	gfxInfo.isFilled = false;	//Figure is NOT filled
 	pOut->DrawCirc(P1, P2, gfxInfo, false);
-	if ((P1.y) < UI.ToolBarHeight|| P2.y < UI.ToolBarHeight)
+	if ((P1.y) < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
 		pOut->CreateDrawToolBar();
 	// 2.5.2 - Drawing highlighted non-filled Circle
 	pOut->PrintMessage("Drawing a Circle ==> Highlighted non-filled, Click to Highlight");
