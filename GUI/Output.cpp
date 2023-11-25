@@ -6,7 +6,7 @@ Output::Output()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 
-	UI.width = 1550;
+	UI.width = 1400;
 	UI.height = 800;
 	UI.wx = 5;
 	UI.wy = 5;
@@ -27,11 +27,11 @@ Output::Output()
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
-	UI.MsgColor = RED;		//Messages color
-	UI.BkGrndColor = LIGHTGOLDENRODYELLOW;	//Background color
-	UI.ChangeColorPalette = WHITE;
+	UI.MsgColor = WHITESMOKE;		//Messages color
+	UI.BkGrndColor = GHOSTWHITE;	//Background color
+	UI.ChangeColorPalette = GHOSTWHITE;
 	UI.HighlightColor = MAGENTA;	//This color should NOT be used to draw figures. use if for highlight only
-	UI.StatusBarColor = TURQUOISE;
+	UI.StatusBarColor = grey;
 	UI.ToolBarColor = WHITE;
 	UI.PenWidth = 3;	//width of the figures frames
 
@@ -102,12 +102,15 @@ void Output::CreateDrawToolBar() const
 	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
 	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
 	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
+	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\RESIZE.jpg";
 	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGEDRAWCLR] = "images\\MenuItems\\CHANGEDRAWCOLOR.jpg";
+	MenuItemImages[ITM_CHANGEFILLCLR] = "images\\MenuItems\\CHANGEFILLCOLOR.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
 	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD-1.jpg";
@@ -210,12 +213,15 @@ void Output::CreateENDRECORDING() const {
 	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
 	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
 	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
+	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\RESIZE.jpg";
 	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGEDRAWCLR] = "images\\MenuItems\\CHANGEDRAWCOLOR.jpg";
+	MenuItemImages[ITM_CHANGEFILLCLR] = "images\\MenuItems\\CHANGEFILLCOLOR.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD-1.jpg";
 	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD.jpg";
@@ -242,12 +248,15 @@ void Output::CreateSTARTRECORDING() const {
 	MenuItemImages[ITM_CIRCLE] = "images\\MenuItems\\Circle.jpg";
 	MenuItemImages[ITM_SELECTONE] = "images\\MenuItems\\SELECTONE.jpg";
 	MenuItemImages[ITM_MOVE] = "images\\MenuItems\\MOVE.jpg";
+	MenuItemImages[ITM_RESIZE] = "images\\MenuItems\\RESIZE.jpg";
 	MenuItemImages[ITM_CLEAR] = "images\\MenuItems\\CLEAR.jpg";
 	MenuItemImages[ITM_DELETE] = "images\\MenuItems\\DELETE.jpg";
 	MenuItemImages[ITM_SAVE] = "images\\MenuItems\\SAVE.jpg";
 	MenuItemImages[ITM_LOAD] = "images\\MenuItems\\LOAD.jpg";
 	MenuItemImages[ITM_UNDO] = "images\\MenuItems\\UNDO.jpg";
 	MenuItemImages[ITM_REDO] = "images\\MenuItems\\REDO.jpg";
+	MenuItemImages[ITM_CHANGEDRAWCLR] = "images\\MenuItems\\CHANGEDRAWCOLOR.jpg";
+	MenuItemImages[ITM_CHANGEFILLCLR] = "images\\MenuItems\\CHANGEFILLCOLOR.jpg";
 	MenuItemImages[ITM_CHANGECOLOR] = "images\\MenuItems\\ChangeColor.jpg";
 	MenuItemImages[ITM_STARTRECORDING] = "images\\MenuItems\\STARTRECORD.jpg";
 	MenuItemImages[ITM_ENDRECORDING] = "images\\MenuItems\\ENDRECORD-1.jpg";
@@ -263,9 +272,6 @@ void Output::CreateColorPalette() const
 {
 	string Colors[colors];
 	Colors[COLOR_BLACK] = "images\\colors\\black.jpg";
-	
-	
-	
 	Colors[COLOR_YELLOW] = "images\\colors\\yellow.jpg";
 	Colors[COLOR_ORANGE] = "images\\colors\\orange.jpg";
 	Colors[COLOR_RED] = "images\\colors\\red.jpg";
@@ -280,6 +286,7 @@ void Output::CreateColorPalette() const
 		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth, UI.ToolBarHeight);
 
 }
+
 void Output::deleteColorPalette() const
 {
 	pWind->SetPen(UI.BkGrndColor, 1);

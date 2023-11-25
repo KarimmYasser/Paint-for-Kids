@@ -58,6 +58,7 @@ ActionType Input::GetUserAction() const
 			case ITM_CIRCLE: return DRAW_CIRCLE;
 			case ITM_SELECTONE: return SELECTONE;
 			case ITM_MOVE: return MOVE;
+			case ITM_RESIZE: return RESIZE;
 			case ITM_CLEAR: return CLEAR;
 			case ITM_DELETE: return DELET;
 			case ITM_UNDO: return UNDO;
@@ -67,6 +68,8 @@ ActionType Input::GetUserAction() const
 			case ITM_STARTRECORDING:return STARTRECORDING;
 			case ITM_ENDRECORDING: return ENDRECORDING;
 			case ITM_PLAYRECORDING:return PLAYRECORDING;
+			case ITM_CHANGEDRAWCLR:return CHANGEDRAWCOLOR;
+			case ITM_CHANGEFILLCLR:return CHANGEFILLCOLOR;
 			case ITM_CHANGECOLOR: return CHANGECOLOR;
 			case ITM_EXIT: return EXIT;
 			default: return EMPTY;	//A click on empty place in design toolbar

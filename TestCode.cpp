@@ -1,6 +1,5 @@
 #include "GUI\Input.h"
 #include "GUI\Output.h"
-#include "iostream"
 //tst
 //test2
 //This is a test code to test the Input and Output classes
@@ -371,6 +370,10 @@ int main()
 			pOut->PrintMessage("Action: Move Figure, Click anywhere");
 			break;
 
+		case RESIZE:
+			pOut->PrintMessage("Action: RE-SIZE, Click anywhere");
+			break;
+
 		case CLEAR:
 			pOut->PrintMessage("Action: Clear All, Click anywhere");
 			break;
@@ -439,6 +442,98 @@ int main()
 			pOut->PrintMessage("Action: PLAY RECORDING, Click anywhere");
 			break;
 
+		case CHANGEDRAWCOLOR:
+			pOut->PrintMessage("Action: change draw color, Choose the color you want");
+			pOut->CreateColorPalette();
+			UI.conD = true;
+			ActiType = pIn->GetUserAction();
+
+			switch (ActiType) {
+
+			case BLACKCLR:
+				pOut->PrintMessage("The draw color will now be black!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case YELLOWCLR:
+				pOut->PrintMessage("The draw color will now be yellow!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case ORANGECLR:
+				pOut->PrintMessage("The draw color will now be orange!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case REDCLR:
+				pOut->PrintMessage("The draw color will now be red!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case GREENCLR:
+				pOut->PrintMessage("The draw color will now be green!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case BLUECLR:
+				pOut->PrintMessage("The draw color will now be blue!");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			}
+
+			pOut->PrintMessage("Action: Press anywhere to delete the figure");
+			pIn->GetPointClicked(x, y);
+			pOut->deleteColorPalette();
+			UI.conD = false;
+			break;
+
+		case CHANGEFILLCOLOR:
+			pOut->PrintMessage("Action: change fill color, Choose the color you want");
+			pOut->CreateColorPalette();
+			UI.conD = true;
+			ActiType = pIn->GetUserAction();
+
+			switch (ActiType) {
+
+			case BLACKCLR:
+				pOut->PrintMessage("The fill color will now be black");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case YELLOWCLR:
+				pOut->PrintMessage("The fill color will now be yellow");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case ORANGECLR:
+				pOut->PrintMessage("The fill color will now be orange");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case REDCLR:
+				pOut->PrintMessage("The fill color will now be red");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case GREENCLR:
+				pOut->PrintMessage("The fill color will now be green");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			case BLUECLR:
+				pOut->PrintMessage("The fill color will now be blue");
+				pIn->GetPointClicked(x, y);
+				break;
+
+			}
+
+			pOut->PrintMessage("Action: Press anywhere to delete the figure");
+			pIn->GetPointClicked(x, y);
+			pOut->deleteColorPalette();
+			UI.conD = false;
+			break;
+
 		case CHANGECOLOR:
 		pOut->CreateColorPalette();
 		pOut->PrintMessage("Action:You pressed the change color button, Choose the color you want ");
@@ -450,13 +545,11 @@ int main()
 		case BLACKCLR:
 			pOut->PrintMessage("Action: you pressed the black color");
 			pIn->GetPointClicked(x, y);
-			std::cout << x;
 			break;
 
 		case YELLOWCLR:
 			pOut->PrintMessage("Action: you pressed the yellow color");
 			pIn->GetPointClicked(x, y);
-			pOut->PrintMessage("press anywhere");
 			break;
 
 		case ORANGECLR:
