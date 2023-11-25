@@ -19,8 +19,10 @@ enum ActionType //The actions supported (you can add more if needed)
 	
 	TO_DRAW,//Switch interface to Draw mode
 	TO_PLAY,		//Switch interface to Play mode
-	EMPTY,			//A click on empty place in the toolbar
+	EMPTY,//A click on empty place in the toolbar
+	EMPTY_PLAYTOOLBAR,
 	DRAWING_AREA,	//A click on the drawing area
+	PLAYING_AREA,
 	STATUS,			//A click on the status bar
 	SAVE,
 	LOAD,

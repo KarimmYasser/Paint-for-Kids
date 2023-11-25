@@ -396,6 +396,15 @@ int main()
 			pOut->PrintMessage("Action: Switch to Play Mode, creating Design tool bar");
 			pOut->CreatePlayToolBar();
 			break;
+				
+		case EMPTY_PLAYTOOLBAR:
+			pOut->PrintMessage("Action: a click on empty area in the Play Tool Bar, Click anywhere");
+			break;
+
+
+		case PLAYING_AREA:
+			pOut->PrintMessage("Action: a click on the draw area in Play Mode, Click anywhere");
+			break;
 
 		case PICKANDHIDE:
 			pOut->PrintMessage("Action:Pick and Hide. Choose an Option");

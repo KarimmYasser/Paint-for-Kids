@@ -116,8 +116,7 @@ ActionType Input::GetUserAction() const
 			{
 			case(ITM_SWITCHDRAW):return TO_DRAW;
 			case(ITM_PICKANDHIDE):return PICKANDHIDE;
-
-
+			default:return EMPTY_PLAYTOOLBAR;
 			}
 		}
 		if (y>=UI.ToolBarHeight && y <= UI.PickandHidetoolbarheight && UI.conDforPicknHide)
@@ -131,6 +130,12 @@ ActionType Input::GetUserAction() const
 			case(ITM_PICKBYBOTH):return PICKBYBOTH;
 			}
 		}
+		if (y >= UI.ToolBarHeight && y <= (UI.height) - (UI.StatusBarHeight))
+		{
+			return PLAYING_AREA;
+		}
+		else
+			return STATUS;
 
 		
 	}
