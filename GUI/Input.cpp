@@ -99,6 +99,7 @@ ActionType Input::GetUserAction() const
 			return DRAWING_AREA;
 		}
 
+
 		//[3] User clicks on the status bar
 		return STATUS;
 	}
