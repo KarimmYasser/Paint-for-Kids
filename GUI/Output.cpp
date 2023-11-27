@@ -6,7 +6,7 @@ Output::Output()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 
-	UI.width = 1400;
+	UI.width = 1300;
 	UI.height = 800;
 	UI.wx = 5;
 	UI.wy = 5;
@@ -15,15 +15,15 @@ Output::Output()
 	UI.HexagonSize = 160;
 
 	UI.StatusBarHeight = 60;
-	UI.ToolBarHeight = 60;
-	UI.MenuItemWidth = 60;
+	UI.ToolBarHeight = 55;
+	UI.MenuItemWidth = 50;
 	UI.PickandHidetoolbarheight = UI.ToolBarHeight*2;
 	UI.PickandHidetoolbarwidth=3*UI.MenuItemWidth;
 
 	UI.ColorPaletteWidthstart = UI.width / 3;
 	UI.ColorPaletteWidthend = UI.width / 3 + colors * UI.MenuItemWidth;
-	UI.ColorPaletteHeightstart = 75;
-	UI.ColorPaletteHeightend = 75 + UI.ToolBarHeight;
+	UI.ColorPaletteHeightstart = 70;
+	UI.ColorPaletteHeightend = 70 + UI.ToolBarHeight;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -294,6 +294,12 @@ void Output::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool selected) co
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight)
+		CreateDrawToolBar();
+
+
+
+
 }
 void Output::DrawSqr(Point P1, GfxInfo SqGfxInfo, bool selected) const {
 	color DrawingClr;
@@ -319,6 +325,11 @@ void Output::DrawSqr(Point P1, GfxInfo SqGfxInfo, bool selected) const {
 	p4.y = P1.y + UI.SqrSize / 2;
 
 	pWind->DrawRectangle(p3.x, p3.y, p4.x, p4.y, style);
+
+	if (p4.y < UI.ToolBarHeight || p3.y < UI.ToolBarHeight)
+		CreateDrawToolBar();
+
+
 }
 
 void Output::DrawTr(Point P1, Point P2, Point P3, GfxInfo TrGfxInfo, bool selected) const
@@ -340,6 +351,10 @@ void Output::DrawTr(Point P1, Point P2, Point P3, GfxInfo TrGfxInfo, bool select
 		style = FRAME;
 
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	if (P1.y < UI.ToolBarHeight || P2.y < UI.ToolBarHeight || P3.y < UI.ToolBarHeight)
+		CreateDrawToolBar();
+
+
 
 }
 void Output::DrawHex(Point P1, GfxInfo HXGfxInfo, bool selected) const
@@ -374,8 +389,15 @@ void Output::DrawHex(Point P1, GfxInfo HXGfxInfo, bool selected) const
 	x[5] = P1.x + UI.HexagonSize / 2;
 	y[5] = P1.y - UI.HexagonSize * 0.866;
 	pWind->DrawPolygon(x, y, UI.HexagonVertices, style);
+	if ((P1.y - UI.HexagonSize * 0.866) < UI.ToolBarHeight)
+		CreateDrawToolBar();
+
+
 	delete[] x;
 	delete[] y;
+
+
+
 
 }
 void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) const
@@ -401,7 +423,8 @@ void Output::DrawCirc(Point P1, Point P2, GfxInfo CircGfxInfo, bool selected) co
 
 
 	pWind->DrawCircle(P1.x, P1.y, radius, style);
-
+	if (P1.y-radius<UI.ToolBarHeight)
+	CreateDrawToolBar();
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
