@@ -199,6 +199,8 @@ void Output::PrintMessage(string msg) const	//Prints a message on status bar
 	pWind->SetFont(20, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(10, UI.height - (int)(UI.StatusBarHeight / 1.5)-5, msg);
 }
+
+
 void Output::CreateENDRECORDING() const {
 
 

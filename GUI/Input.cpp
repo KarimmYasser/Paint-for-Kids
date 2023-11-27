@@ -28,6 +28,9 @@ string Input::GetSrting(Output* pO) const
 			Label += Key;
 		if (pO)
 			pO->PrintMessage(Label);
+
+		pWind->FlushMouseQueue();
+		pWind->FlushKeyQueue();
 	}
 }
 

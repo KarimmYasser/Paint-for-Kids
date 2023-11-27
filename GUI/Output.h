@@ -37,6 +37,7 @@ public:
 	///Make similar functions for drawing all other figure types.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
+	void PrintKeyboardMessage(string msg) const;
 
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
