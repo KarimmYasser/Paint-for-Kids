@@ -16,6 +16,7 @@ Output::Output()
 
 	UI.StatusBarHeight = 60;
 	UI.ToolBarHeight = 55;
+	UI.ChangeColorPaletteHeight = 50;
 	UI.MenuItemWidth = 50;
 	UI.PickandHidetoolbarheight = UI.ToolBarHeight*2;
 	UI.PickandHidetoolbarwidth=3*UI.MenuItemWidth;
@@ -23,7 +24,7 @@ Output::Output()
 	UI.ColorPaletteWidthstart = UI.width / 3;
 	UI.ColorPaletteWidthend = UI.width / 3 + colors * UI.MenuItemWidth;
 	UI.ColorPaletteHeightstart = 70;
-	UI.ColorPaletteHeightend = 70 + UI.ToolBarHeight;
+	UI.ColorPaletteHeightend = 70 + UI.ChangeColorPaletteHeight;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -232,7 +233,7 @@ void Output::CreateColorPalette() const
 	Colors[COLOR_BLACK] = "images\\colors\\black.jpg";
 	Colors[COLOR_YELLOW] = "images\\colors\\yellow.jpg";
 	Colors[COLOR_ORANGE] = "images\\colors\\orange.jpg";
-	Colors[COLOR_RED] = "images\\colors\\red.jpg";
+	Colors[COLOR_RED] = "images\\colors\\red.jpg";	
 	Colors[COLOR_GREEN] = "images\\colors\\green.jpg";
 	Colors[COLOR_BLUE] = "images\\colors\\blue.jpg";
 
@@ -242,7 +243,7 @@ void Output::CreateColorPalette() const
 	pWind->DrawRectangle(UI.ColorPaletteWidthstart - 10, UI.ColorPaletteHeightstart - 10, UI.ColorPaletteWidthend + 10, UI.ColorPaletteHeightend + 10);
 
 	for (int i = 0; i < colors; i++)
-		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth, UI.ToolBarHeight);
+		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth, UI.ChangeColorPaletteHeight);
 
 }
 
