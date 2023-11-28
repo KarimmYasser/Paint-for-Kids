@@ -6,7 +6,7 @@ Output::Output()
 	//Initialize user interface parameters
 	UI.InterfaceMode = MODE_DRAW;
 
-	UI.width = 1300;
+	UI.width = 1400;
 	UI.height = 800;
 	UI.wx = 5;
 	UI.wy = 5;
@@ -15,16 +15,16 @@ Output::Output()
 	UI.HexagonSize = 160;
 
 	UI.StatusBarHeight = 60;
-	UI.ToolBarHeight = 55;
+	UI.ToolBarHeight = 60;
 	UI.ChangeColorPaletteHeight = 50;
-	UI.MenuItemWidth = 50;
+	UI.MenuItemWidth = 55;
 	UI.PickandHidetoolbarheight = UI.ToolBarHeight*2;
 	UI.PickandHidetoolbarwidth=3*UI.MenuItemWidth;
 
 	UI.ColorPaletteWidthstart = UI.width / 3;
 	UI.ColorPaletteWidthend = UI.width / 3 + colors * UI.MenuItemWidth;
-	UI.ColorPaletteHeightstart = 70;
-	UI.ColorPaletteHeightend = 70 + UI.ChangeColorPaletteHeight;
+	UI.ColorPaletteHeightstart = 75;
+	UI.ColorPaletteHeightend = 75 + UI.ChangeColorPaletteHeight;
 
 	UI.DrawColor = BLUE;	//Drawing color
 	UI.FillColor = GREEN;	//Filling color
@@ -245,7 +245,7 @@ void Output::CreateColorPalette() const
 	pWind->DrawRectangle(UI.ColorPaletteWidthstart - 10, UI.ColorPaletteHeightstart - 10, UI.ColorPaletteWidthend + 10, UI.ColorPaletteHeightend + 10);
 
 	for (int i = 0; i < colors; i++)
-		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth, UI.ChangeColorPaletteHeight);
+		pWind->DrawImage(Colors[i], UI.ColorPaletteWidthstart + i * UI.MenuItemWidth, UI.ColorPaletteHeightstart, UI.MenuItemWidth-5, UI.ChangeColorPaletteHeight);
 
 }
 
